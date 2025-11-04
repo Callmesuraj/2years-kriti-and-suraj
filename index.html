@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy 2 Years —  Kritika ❤️</title>
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#ff6b81;--muted:#aab3c9}
+    *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 10%, #081226 0%, #071022 20%, #071126 60%, #050812 100%);color:#e6eef8;display:flex;align-items:center;justify-content:center;padding:24px}
+    .wrap{width:100%;max-width:980px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#ffd166);display:flex;align-items:center;justify-content:center;font-weight:700;color:#1b2330;font-size:20px}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin-top:6px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:20px;border-radius:18px;margin-top:18px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+
+    .row{display:grid;grid-template-columns:1fr 340px;gap:18px}
+    .left{padding:10px}
+    .right{padding:10px}
+
+    .greeting{font-size:20px;margin:8px 0}
+    .message{background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:16px;border-radius:12px;color:#e9f2ff}
+
+    .big-heart{display:flex;align-items:center;gap:12px}
+    .heart-btn{background:transparent;border:2px solid rgba(255,255,255,0.06);padding:12px 18px;border-radius:999px;cursor:pointer;color:var(--accent);font-weight:700}
+
+    .gifts{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+    .gift-row{display:flex;gap:10px}
+    .gift{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:10px;text-align:center}
+    .gift img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .gift h4{margin:8px 0 4px 0}
+    .gift small{color:var(--muted)}
+
+    .reveal{display:flex;gap:8px;margin-top:12px}
+    .btn{background:var(--accent);border:none;color:#1b2330;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef8}
+
+    .note{margin-top:12px;color:var(--muted);font-size:14px}
+
+    .right .panel{background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.01));padding:14px;border-radius:8px}
+    .timer{font-size:20px;font-weight:700}
+
+    .audio-controls{display:flex;gap:8px;align-items:center;margin-top:10px}
+
+    footer{margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small screens */
+    @media (max-width:860px){.row{grid-template-columns:1fr;}.right{order:2}.left{order:1}}
+
+    /* floating hearts */
+    .floating{position:fixed;left:0;right:0;top:0;bottom:0;pointer-events:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">S+K</div>
+      <div>
+        <h1>Happy 2 Years, Kritika ❤️</h1>
+        <p class="lead">From Suraj — a small website made with love for our 2nd anniversary.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="row">
+        <div class="left">
+          <div class="message">
+            <div class="greeting">Hey Kriti —</div>
+            <div id="typed" style="font-size:16px;line-height:1.45;color:#eaf4ff">Two years of laughs, late-night talks, and tiny moments that mean everything. Click the heart when you're ready ❤️</div>
+            <div style="margin-top:12px" class="big-heart">
+              <button id="heartBtn" class="heart-btn">Open my surprise 💌</button>
+              <div class="note">Click to reveal gifts, a personal message, and a little confetti ✨</div>
+            </div>
+
+            <div class="gifts" id="gifts" style="display:none">
+              <div class="gift-row">
+                <div class="gift">
+                  <img src="kurti.jpg" alt="Kurti (replace with real photo)">
+                  <h4></h4>
+                  <small>For your beautiful moments</small>
+                </div>
+                <div class="gift">
+                  <img src="suit.jpg" alt="Suit (replace)">
+                  <h4></h4>
+                  <small>Comfort + style</small>
+                </div>
+              </div>
+
+              <div class="gift-row">
+                <div class="gift">
+                  <img src="scrunchy.jpg" alt="Scrunchy (replace)">
+                  <h4></h4>
+                  <small>For your cute hair days</small>
+                </div>
+                <div class="gift">
+                  <img src="pendent.jpg" alt="Jhumke (replace)">
+                  <h4></h4>
+                  <small>Little sparkle from me</small>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+                <button id="readNote" class="btn">Read my note</button>
+                <button id="playSong" class="btn ghost">Play song</button>
+          
+              </div>
+
+              <div id="noteBox" style="display:none;margin-top:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:8px;color:#e6eef8">
+                <strong>Note from Suraj:</strong>
+                <p id="noteText" style="margin:6px 0">Do saal ho gaye baby.You are most important person in my life .And sorry meri baby meri galtiyo k liye . I love you — forever & always.<br><br>— Suraj</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="panel">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-size:13px;color:var(--muted)">Anniversary</div>
+                <div class="timer" id="countdown">—</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:13px;color:var(--muted)">Couple</div>
+                <div style="font-weight:700">Suraj & Kritika</div>
+              </div>
+            </div>
+
+            <div class="audio-controls">
+              <audio id="song" src="anniversary_song.mp3"></audio>
+              <button id="togglePlay" class="btn ghost">Play / Pause</button>
+              <button id="confettiBtn" class="btn">Celebrate 🎉</button>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;text-align:center">
+            <img src="Polaroid.jpg" alt="Polaroid" style="width:100%;border-radius:10px;object-fit:cover;height:450px">
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        Tip: Replace the placeholder images in the images/ folder with the real photos and add an MP3 at audio/anniversary_song.mp3
+      </footer>
+    </div>
+  </div>
+
+  <canvas class="floating" id="confettiCanvas"></canvas>
+
+  <script>
+    // Simple typed intro effect (no external libs)
+    (function(){
+      const el = document.getElementById('typed');
+      const full = el.innerText;
+      el.innerText = '';
+      let i=0;
+      function step(){
+        if(i<=full.length){el.innerText = full.slice(0,i);i++;setTimeout(step,18);} 
+      }
+      step();
+    })();
+
+    const heartBtn = document.getElementById('heartBtn');
+    const gifts = document.getElementById('gifts');
+    const noteBox = document.getElementById('noteBox');
+    const readNote = document.getElementById('readNote');
+    const playSongBtn = document.getElementById('playSong');
+    const downloadNote = document.getElementById('downloadNote');
+    const song = document.getElementById('song');
+    const togglePlay = document.getElementById('togglePlay');
+    const confettiBtn = document.getElementById('confettiBtn');
+
+    heartBtn.addEventListener('click', ()=>{
+      gifts.style.display = 'block';
+      heartBtn.disabled = true;
+      heartBtn.innerText = 'Surprise opened 💖';
+      launchConfetti(100);
+    });
+
+    readNote.addEventListener('click', ()=>{noteBox.style.display = noteBox.style.display === 'none' ? 'block' : 'none';});
+
+    playSongBtn.addEventListener('click', ()=>{song.play();});
+    togglePlay.addEventListener('click', ()=>{if(song.paused) song.play(); else song.pause();});
+
+    downloadNote.addEventListener('click', ()=>{
+      const text = document.getElementById('noteText').innerText;
+      const blob = new Blob([text],{type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'note_for_kratika.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Simple countdown to now + 5 hours (since user said 5 hours)
+    (function(){
+      const countdownEl = document.getElementById('countdown');
+      // target = current time + 5 hours
+      const target = new Date(Date.now() + 5*60*60*1000);
+      function update(){
+        const now = new Date();
+        const diff = Math.max(0, target - now);
+        const h = Math.floor(diff / (1000*60*60));
+        const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+        const s = Math.floor((diff % (1000*60)) / 1000);
+        countdownEl.innerText = `${h}h ${m}m ${s}s`;
+        if(diff>0) requestAnimationFrame(update);
+      }
+      update();
+    })();
+
+    // Confetti implementation (lightweight)
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let W = canvas.width = innerWidth; let H = canvas.height = innerHeight;
+    window.addEventListener('resize', ()=>{W=canvas.width=innerWidth;H=canvas.height=innerHeight;});
+
+    function random(min,max){return Math.random()*(max-min)+min}
+    function launchConfetti(count=80){
+      const conf = [];
+      for(let i=0;i<count;i++){
+        conf.push({x:random(0,W), y:random(-H,0), r:random(6,12), d:random(2,6), vx:random(-3,3), vy:random(2,6), color:`hsl(${Math.floor(random(0,360))} 80% 65%)`, rot:random(0,360)});
+      }
+      let t = 0;
+      function draw(){
+        ctx.clearRect(0,0,W,H);
+        for(let p of conf){
+          p.x += p.vx; p.y += p.vy; p.vy += 0.02; p.rot += 4;
+          ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot*Math.PI/180);
+          ctx.fillStyle = p.color; ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);
+          ctx.restore();
+        }
+        t++;
+        if(t<300){requestAnimationFrame(draw);} else {ctx.clearRect(0,0,W,H);} 
+      }
+      draw();
+    }
+
+    confettiBtn.addEventListener('click', ()=>launchConfetti(150));
+
+    // small keyboard shortcut: press 'k' to toggle note (for a fun moment)
+    window.addEventListener('keydown', (e)=>{if(e.key.toLowerCase()==='k') noteBox.style.display = noteBox.style.display === 'none' ? 'block' : 'none';});
+
+    // Prevent autoplay issues: show a gentle hint to click play if browser blocks audio
+    song.addEventListener('play', ()=>{playSongBtn.innerText = 'Playing...';});
+    song.addEventListener('pause', ()=>{playSongBtn.innerText = 'Play song';});
+
+  
+  </script>
+
+</body>
+
+</html>
